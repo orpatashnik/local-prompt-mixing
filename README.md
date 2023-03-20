@@ -1,1 +1,3 @@
-# local-prompt-mixing
+# Localizing Object-level Shape Variations with Text-to-Image Diffusion Models
+
+### Code will be published soon... 
