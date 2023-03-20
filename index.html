@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Localizing Prompt Mixing</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Localizing Object-level Shape Variations with Text-to-Image Diffusion Models</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://orpatashnik.github.io/">Or Patashnik</a><sup>1</sup>&nbsp</span>
+            <span class="author-block">
+              <a>Daniel Garibi</a><sup>1</sup>&nbsp</span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/idan-azuri125">Idan Azuri</a><sup>2</sup>&nbsp
+            </span>
+            <span class="author-block">
+              <a href="https://www.elor.sites.tau.ac.il/">Hadar Averbuch-Elor</a><sup>1</sup>&nbsp
+            </span>
+            <span class="author-block">
+              <a href="https://danielcohenor.com/">Daniel Cohen-Or</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Tel-Aviv University</span> &nbsp
+            <span class="author-block"><sup>2</sup>Independent Researcher</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (coming soon)</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+        <img src="static/images/teaser_site.png">
+      <h2 class="subtitle has-text-centered">
+        We generate a collection of images that depicts variations in the shape of a specific object,
+        enabling an object-level shape exploration process.
+      </h2>
+      <h2 class="subtitle has-text-centered">
+        To do so, we present a prompt-mixing approach and a special case of it, Mix-and-Match.
+        Additionally, we present two general localization techniques.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel" data-slides-to-show="1">
+          <img src="static/images/cactus.png">
+          <img src="static/images/sponge.png">
+          <img src="static/images/watermelon.png">
+          <img src="static/images/bottle.png">
+          <img src="static/images/vase.png">
+          <img src="static/images/rice.png">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Text-to-image models give rise to workflows which often begin with an exploration step,
+            where users sift through a large collection of generated images.
+            The global nature of the text-to-image generation process prevents users from narrowing their exploration
+            to a particular object in the image. In this paper, we present a technique to generate a collection of
+            images that depicts variations in the shape of a specific object, enabling an object-level shape
+            exploration process. Creating plausible variations is challenging as it requires control over the shape
+            of the generated object while respecting its semantics. A particular challenge when generating object
+            variations is accurately localizing the manipulation applied over the object's shape. We introduce a
+            prompt-mixing technique that switches between prompts along the denoising process to attain a variety
+            of shape choices. To localize the image-space operation, we present two techniques that use the
+            self-attention layers in conjunction with the cross-attention layers. Moreover, we show that these
+            localization techniques are general and effective beyond the scope of generating object variations.
+            Extensive results and comparisons demonstrate the effectiveness of our method in generating
+            object variations, and the competence of our localization techniques.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+      <div class="container is-max-desktop is-centered has-text-centered">
+      <h2 class="title is-3">How does it work?</h2>
+        <img src="static/images/arch.png">
+          <div class="content has-text-justified">
+            <p>
+            Given a reference image, and its corresponding denoising process, our full pipeline consists of three
+            main building blocks.
+            We perform <b>Mix-and-Match</b> in the timestamp intervals
+            [T, T<sub>3</sub>], [T<sub>3</sub>, T<sub>2</sub>], [T<sub>2</sub>, 0] using the prompt P(w). </p>
+            <p>
+            For example, during the intervals [T, T<sub>3</sub>], [T<sub>2</sub>, 0] we set w=''basket'', while during the
+            interval [T<sub>3</sub>, T<sub>2</sub>] we set w=''tray''. </p>
+            <p>
+            During the denoising process, we apply our attention-based shape localization technique to preserve other
+            objects' structures (here, ''table''). We do so by selectively injecting the self-attention map from the
+            reference denoising process.
+            At t=T<sub>1</sub>, we apply controllable background preservation by segmenting the reference and the newly
+            generated images, blend them, and proceed the denoising process.
+            </p>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+<section class="hero is-small">
+  <div class="hero-body">
+      <div class="container is-max-desktop is-centered has-text-centered">
+      <h2 class="title is-3">Prompt-Mixing</h2>
+        <img class="my-image" src="static/images/prompt-mixing.png">
+          <div class="content has-text-justified">
+            <p>
+            <b>Mix-and-Match</b> is built on <b>prompt-mixing</b>. We observe that the denoising process roughly
+              consists of three stages. In the first stage, the general configuration or layout is drafted.
+              In the second stage, the shapes of the objects are formed. Finally, in the third stage, their fine
+              visual details are generated.
+            </p>
+            <p>
+            In the above example, the images in the three leftmost columns were generated using the prompt ''Two <b>w</b> on the street''
+            where <b>w</b> is indicated over the bar under each image. The images in the two rightmost columns were generated
+            using prompt-mixing. That is, we change <b>w</b> along the denoising process where the bar under each image indicates
+            the <b>w</b> used in each stage.
+            </p>
+            <p>
+            For example, the upper rightmost image was generated in the following way. In the first denoising stage, we used
+            w=''balls'', in the second stage we used w=''pyramids'', and in the last stage we used w=''fluffies''.
+            </p>
+            <p>
+            As can be seen, the layout is taken from the first stage, the object's shape is taken from the second stage, and
+            the fine-visual details are taken from the third stage. In Mix-and-Match, to attain object shape variations
+            we change the word corresponding to the object we aim to change only in the second stage. This allows us to preserve
+            the layout of the original image, the fine-visual details of the original object, and to change its shape.
+            </p>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+      <div class="container is-max-desktop is-centered has-text-centered">
+      <h2 class="title is-3">Attention-Based Shape Localization</h2>
+        <img class="my-image" src="static/images/self-attn-injection.png">
+          <div class="content has-text-justified">
+            <p>
+              Our method changes the shape of a specific object, and preserves the other objects in the image.
+              In the above example, we aim at changing the chair while preserving the dog.
+              To preserve an object (e.g., a dog) in an image, we locate its pixels using a cross-attention map.
+              A mask M<sub>t</sub><sup>(l)</sup> is created for the self-attention map S<sub>t</sub><sup>(l)</sup> by
+              setting rows and columns to 1
+              (yellow) based on the object's pixels (see the orange pixel). Using this mask, we blend the original and
+              generated image's self-attention maps and replace the self-attention map of the generated image with
+              the resulting map.
+            </p>
+            <p>We show that this method can be integrated with other text-guided image editing methods, to improve their
+            localization. For example, we show results with prompt-to-prompt:
+            </p>
+        </div>
+            <img class="my-image" src="static/images/dog-crown.png">
+      </div>
+    </div>
+</section>
+
+
+
+<section class="hero is-small">
+  <div class="hero-body">
+      <div class="container is-max-desktop is-centered has-text-centered">
+      <h2 class="title is-3">Controllable Background Preservation</h2>
+          <div class="content has-text-justified">
+            <p>
+              To preserve the appearance of the desired regions, at
+              t=T<sub>1</sub> we blend the original and the generated images,
+              taking the changed regions (e.g., the object of interest) from
+              the generated image and the unchanged regions (e.g., background)
+              from the original image.
+            </p>
+            <p>To this end, we segment the generated image by utilizing the self-attention map.
+            Specifically, we reshape the N<sup>2</sup>xN<sup>2</sup> self-attention map to be NxNxN<sup>2</sup> and cluster
+            the deep pixels whose dimension is N<sup>2</sup>. In the paper, we show that this approach is useful for additional editing methods.
+            In the figure below we show a few segmentation results. The label for each segment was automatically extracted using the cross-attention maps.
+            </p>
+
+        </div>
+            <img class="my-image" src="static/images/segmentation.png">
+      </div>
+    </div>
+</section>
+
+
+<section class="section is-light" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{,
+      doi = {},
+      url = {},
+      author = {},
+      title = {Localizing Object-level Shape Variations with Text-to-Image Diffusion Models},
+      publisher = {},
+      year = {},
+      primaryClass={}
+}
+</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
