@@ -33,10 +33,12 @@ nltk.download('punkt')
 nltk.download('averaged_perceptron_tagger')
 ```
 
-If you want to run the gradio demo locally:
+This project has a gradio [demo](https://huggingface.co/spaces/orpatashnik/local-prompt-mixing) deployed in HuggingFace.
+To run the demo locally, run the following: 
 ```shell
-pip install gradio
+gradio gradio_app.py
 ```
+Then, you can connect to the local demo by browsing to `http://localhost:7860/`.
 
 ## Prompt Mix & Match Usage
 

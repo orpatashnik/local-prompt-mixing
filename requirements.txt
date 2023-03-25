@@ -8,3 +8,4 @@ nltk==3.8.1
 scipy
 scikit-learn
 accelerate
+gradio
