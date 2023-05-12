@@ -99,7 +99,7 @@ python main.py --real_image_path "real_images/lamp_simple.png" --prompt "A table
 
 All generated images will be saved in the same format as for generated image.
 
-## Segmentation Usage
+## Self-Segmentation Usage
 
 <p align="center">
 <img src="docs/seg.jpg" width="800px"/>  
