@@ -1,4 +1,4 @@
-# Localizing Object-level Shape Variations with Text-to-Image Diffusion Models
+# Localizing Object-level Shape Variations with Text-to-Image Diffusion Models (ICCV 2023)
 
 > **Or Patashnik, Daniel Garibi, Idan Azuri, Hadar Averbuch-Elor, Daniel Cohen-Or**
 > 
@@ -128,3 +128,16 @@ The outputs will be saved to the path `"{exp_path}/"`:
 
 ## Acknowledgements 
 This code is builds on the code from the [diffusers](https://github.com/huggingface/diffusers) library as well as the [Prompt-to-Prompt](https://github.com/google/prompt-to-prompt/) codebase.
+
+## Citation
+
+If you use this code for your research, please cite our paper:
+
+```
+@InProceedings{patashnik2023localizing,
+    author    = {Patashnik, Or and Garibi, Daniel and Azuri, Idan and Averbuch-Elor, Hadar and Cohen-Or, Daniel},
+    title     = {Localizing Object-level Shape Variations with Text-to-Image Diffusion Models},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    year      = {2023}
+}
+```
